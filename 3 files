@@ -1,4 +1,4 @@
-2508: 
+2508.18573v1: 
 <?xml version='1.0' encoding='UTF-8'?>
 <gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="gdml.xsd">
   <define/>
@@ -243,7 +243,7 @@
 </gdml>
 
 
-1802: 
+1802.07198: 
 <?xml version='1.0' encoding='UTF-8'?>
 <gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="gdml.xsd">
   <define/>
@@ -712,7 +712,7 @@
   </setup>
 </gdml>
 
-2207:
+2207.03764:
 <?xml version='1.0' encoding='UTF-8'?>
 <gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="gdml.xsd">
   <define/>
