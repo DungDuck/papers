@@ -1,0 +1,556 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="gdml.xsd">
+  <define/>
+  <materials>
+    <element name="Xenon" Z="54">
+      <atom unit="g/mole" value="131.293"/>
+    </element>
+    <element name="Carbon" Z="6">
+      <atom unit="g/mole" value="12.011"/>
+    </element>
+    <element name="Fluorine" Z="9">
+      <atom unit="g/mole" value="18.998"/>
+    </element>
+    <element name="Hydrogen" Z="1">
+      <atom unit="g/mole" value="1.008"/>
+    </element>
+    <element name="Gadolinium" Z="64">
+      <atom unit="g/mole" value="157.25"/>
+    </element>
+    <material name="LiquidXenon" state="liquid">
+      <D value="2.888" unit="g/cm3"/>
+      <T value="178" unit="K"/>
+      <fraction n="1" ref="Xenon"/>
+    </material>
+    <material name="GaseousXenon" state="gas">
+      <D value="0.0177" unit="g/cm3"/>
+      <T value="178" unit="K"/>
+      <fraction n="1" ref="Xenon"/>
+    </material>
+    <material name="PTFE" formula="C2F4" state="solid">
+      <D value="2.2" unit="g/cm3"/>
+      <composite n="2" ref="Carbon"/>
+      <composite n="4" ref="Fluorine"/>
+    </material>
+    <material name="GdLS" state="liquid">
+      <D value="0.86" unit="g/cm3"/>
+      <fraction n="0.8755" ref="Carbon"/>
+      <fraction n="0.1235" ref="Hydrogen"/>
+      <fraction n="0.001" ref="Gadolinium"/>
+    </material>
+  </materials>
+  <solids>
+    <tube name="active_lxe_s" lunit="mm" aunit="deg" rmin="0" rmax="148.76" z="1456" startphi="0" deltaphi="360"/>
+    <tube name="gas_pocket_s" lunit="mm" aunit="deg" rmin="0" rmax="728" z="8" startphi="0" deltaphi="360"/>
+    <tube name="field_cage_s" lunit="mm" aunit="deg" rmin="595.06" rmax="743.82" z="1456" startphi="0" deltaphi="360"/>
+    <tube name="cathode_grid_s" lunit="mm" aunit="deg" rmin="0" rmax="728" z="3" startphi="0" deltaphi="360"/>
+    <tube name="gate_grid_s" lunit="mm" aunit="deg" rmin="0" rmax="728" z="3" startphi="0" deltaphi="360"/>
+    <tube name="anode_grid_s" lunit="mm" aunit="deg" rmin="0" rmax="728" z="3" startphi="0" deltaphi="360"/>
+    <tube name="pmt_array_top_s" lunit="mm" aunit="deg" rmin="0" rmax="728" z="120" startphi="0" deltaphi="360"/>
+    <tube name="pmt_array_bottom_s" lunit="mm" aunit="deg" rmin="0" rmax="728" z="120" startphi="0" deltaphi="360"/>
+    <tube name="tpc_s" lunit="mm" aunit="deg" rmin="0" rmax="759" z="1754" startphi="0" deltaphi="360"/>
+    <tube name="skin_s" lunit="mm" aunit="deg" rmin="758" rmax="838" z="1754" startphi="0" deltaphi="360"/>
+    <tube name="icv_s" lunit="mm" aunit="deg" rmin="838" rmax="848" z="1922" startphi="0" deltaphi="360"/>
+    <tube name="vacuum_s" lunit="mm" aunit="deg" rmin="848" rmax="948" z="1922" startphi="0" deltaphi="360"/>
+    <tube name="ocv_s" lunit="mm" aunit="deg" rmin="948" rmax="961" z="2148" startphi="0" deltaphi="360"/>
+    <tube name="od_s" lunit="mm" aunit="deg" rmin="961" rmax="1161" z="2148" startphi="0" deltaphi="360"/>
+    <tube name="water_s" lunit="mm" aunit="deg" rmin="0" rmax="4515.54" z="3148" startphi="0" deltaphi="360"/>
+    <box name="world_s" lunit="mm" x="9506.4" y="9506.4" z="9506.4"/>
+    <box name="active_xenon_volume_solid" lunit="mm" x="1000" y="1000" z="1000"/>
+    <sphere name="xenon_active_solid_solid" lunit="mm" aunit="deg" rmin="0" rmax="1500" startphi="0" deltaphi="360" starttheta="0" deltatheta="41"/>
+    <sphere name="xenon_mminos_solid_solid" lunit="mm" aunit="deg" rmin="0" rmax="1520" startphi="0" deltaphi="360" starttheta="0" deltatheta="41"/>
+    <box name="detector_cryostat_inner_solid" lunit="mm" x="1000" y="1000" z="900"/>
+    <box name="detector_cryo_vacuum_solid" lunit="mm" x="1000" y="1000" z="1000"/>
+    <box name="cryostat_vacuum_solid_solid" lunit="mm" x="1000" y="1000" z="850"/>
+    <box name="cryostat_skin_solid_solid" lunit="mm" x="1000" y="1000" z="860"/>
+    <box name="outer_detector_shell_solid" lunit="mm" x="1000" y="1000" z="1000"/>
+    <box name="outer_detector_solid_solid" lunit="mm" x="1000" y="1000" z="950"/>
+    <box name="outer_detector_interior_solid_solid" lunit="mm" x="1000" y="1000" z="940"/>
+    <box name="water_shield_volume_solid" lunit="mm" x="5000" y="5000" z="5000"/>
+    <tube name="active_volume_solid" lunit="mm" aunit="deg" rmin="148.76" rmax="297.53" z="1456" startphi="0" deltaphi="360"/>
+    <tube name="gas_pocket_2_solid" lunit="mm" aunit="deg" rmin="297.53" rmax="446.29" z="1456" startphi="0" deltaphi="360"/>
+    <tube name="field_cage_2_solid" lunit="mm" aunit="deg" rmin="446.29" rmax="595.06" z="1456" startphi="0" deltaphi="360"/>
+    <tube name="cathode_grid_2_solid" lunit="mm" aunit="deg" rmin="0" rmax="1" z="0.2" startphi="0" deltaphi="360"/>
+    <tube name="gate_grid_2_solid" lunit="mm" aunit="deg" rmin="0" rmax="1" z="0.2" startphi="0" deltaphi="360"/>
+    <tube name="anode_grid_2_solid" lunit="mm" aunit="deg" rmin="0" rmax="1" z="0.2" startphi="0" deltaphi="360"/>
+    <box name="pmt_array_top_253_2_solid" lunit="mm" x="180" y="50" z="2"/>
+    <box name="pmt_array_bottom_241_2_solid" lunit="mm" x="180" y="50" z="2"/>
+    <tube name="skin_side_panel_solid" lunit="mm" aunit="deg" rmin="0" rmax="273.75" z="1456" startphi="0" deltaphi="360"/>
+    <tube name="skin_top_panel_solid" lunit="mm" aunit="deg" rmin="273.75" rmax="547.49" z="877" startphi="0" deltaphi="360"/>
+    <tube name="skin_bottom_panel_solid" lunit="mm" aunit="deg" rmin="547.49" rmax="821.24" z="877" startphi="0" deltaphi="360"/>
+    <box name="cryostat_shell_solid" lunit="mm" x="1000" y="1000" z="1000"/>
+    <box name="outer_shell_solid" lunit="mm" x="1000" y="1000" z="961"/>
+    <sphere name="top_dome_solid" lunit="mm" aunit="deg" rmin="0" rmax="1" startphi="0" deltaphi="360" starttheta="0" deltatheta="40"/>
+    <sphere name="bottom_dome_solid" lunit="mm" aunit="deg" rmin="0" rmax="1" startphi="0" deltaphi="360" starttheta="140" deltatheta="40"/>
+    <box name="cryostat_outer_shell_solid" lunit="mm" x="1000" y="1000" z="1000"/>
+    <tube name="cryostat_inner_tube_solid" lunit="mm" aunit="deg" rmin="0" rmax="910.0799999999999" z="961" startphi="0" deltaphi="360"/>
+    <sphere name="top_dome_2_solid" lunit="mm" aunit="deg" rmin="0" rmax="1" startphi="0" deltaphi="360" starttheta="0" deltatheta="40"/>
+    <sphere name="bottom_dome_2_solid" lunit="mm" aunit="deg" rmin="0" rmax="1" startphi="0" deltaphi="360" starttheta="140" deltatheta="40"/>
+    <box name="cryostat_shell_2_solid" lunit="mm" x="1000" y="1000" z="1000"/>
+    <sphere name="top_dome_3_solid" lunit="mm" aunit="deg" rmin="0" rmax="1" startphi="0" deltaphi="360" starttheta="0" deltatheta="40"/>
+    <sphere name="bottom_dome_3_solid" lunit="mm" aunit="deg" rmin="0" rmax="1" startphi="0" deltaphi="360" starttheta="140" deltatheta="40"/>
+    <box name="ld_pmt_array_solid" lunit="mm" x="2229.12" y="900" z="238.07999999999998"/>
+    <polycone name="ld_inner_vessel_solid" lunit="mm" aunit="deg" startphi="0" deltaphi="360">
+      <zplane z="-1074" rmin="0" rmax="1161"/>
+      <zplane z="1074" rmin="0" rmax="1161"/>
+    </polycone>
+    <box name="ld_inner_vessel_skin_solid" lunit="mm" x="1000" y="1000" z="1000"/>
+    <polycone name="ld_inner_vessel_outer_shell_solid" lunit="mm" aunit="deg" startphi="0" deltaphi="360">
+      <zplane z="-1074" rmin="0" rmax="1165"/>
+      <zplane z="1074" rmin="0" rmax="1165"/>
+    </polycone>
+    <polycone name="ld_inner_vessel_inner_core_solid" lunit="mm" aunit="deg" startphi="0" deltaphi="360">
+      <zplane z="-1074" rmin="0" rmax="1139"/>
+      <zplane z="1074" rmin="0" rmax="1139"/>
+    </polycone>
+    <tube name="ld_xenon_gas_region_solid" lunit="mm" aunit="deg" rmin="0" rmax="1102.95" z="1074" startphi="0" deltaphi="360"/>
+    <box name="ld_support_structures_solid" lunit="mm" x="200" y="200" z="50"/>
+    <tube name="water_volume_solid" lunit="mm" aunit="deg" rmin="0" rmax="3802.56" z="1574" startphi="0" deltaphi="360"/>
+    <box name="tank_shell_solid" lunit="mm" x="1000" y="1000" z="1000"/>
+  </solids>
+  <structure>
+    <volume name="active_lxe">
+      <materialref ref="LiquidXenon"/>
+      <solidref ref="active_lxe_s"/>
+      <auxiliary auxtype="SensDet" auxvalue="LXe_TPC_Active"/>
+    </volume>
+    <volume name="gas_pocket">
+      <materialref ref="GaseousXenon"/>
+      <solidref ref="gas_pocket_s"/>
+      <auxiliary auxtype="SensDet" auxvalue="GXe_S2"/>
+    </volume>
+    <volume name="field_cage">
+      <materialref ref="PTFE"/>
+      <solidref ref="field_cage_s"/>
+    </volume>
+    <volume name="cathode_grid">
+      <materialref ref="G4_STAINLESS-STEEL"/>
+      <solidref ref="cathode_grid_s"/>
+    </volume>
+    <volume name="gate_grid">
+      <materialref ref="G4_STAINLESS-STEEL"/>
+      <solidref ref="gate_grid_s"/>
+    </volume>
+    <volume name="anode_grid">
+      <materialref ref="G4_STAINLESS-STEEL"/>
+      <solidref ref="anode_grid_s"/>
+    </volume>
+    <volume name="pmt_array_top_253">
+      <materialref ref="G4_STAINLESS-STEEL"/>
+      <solidref ref="pmt_array_top_s"/>
+      <auxiliary auxtype="SensDet" auxvalue="PMT_Top"/>
+    </volume>
+    <volume name="pmt_array_bottom_241">
+      <materialref ref="G4_STAINLESS-STEEL"/>
+      <solidref ref="pmt_array_bottom_s"/>
+      <auxiliary auxtype="SensDet" auxvalue="PMT_Bottom"/>
+    </volume>
+    <volume name="active_volume">
+      <materialref ref="LiquidXenon"/>
+      <solidref ref="active_volume_solid"/>
+      <auxiliary auxtype="SensDet" auxvalue="active_volume"/>
+    </volume>
+    <volume name="gas_pocket_2">
+      <materialref ref="GaseousXenon"/>
+      <solidref ref="gas_pocket_2_solid"/>
+    </volume>
+    <volume name="field_cage_2">
+      <materialref ref="PTFE"/>
+      <solidref ref="field_cage_2_solid"/>
+    </volume>
+    <volume name="cathode_grid_2">
+      <materialref ref="G4_STAINLESS-STEEL"/>
+      <solidref ref="cathode_grid_2_solid"/>
+    </volume>
+    <volume name="gate_grid_2">
+      <materialref ref="G4_STAINLESS-STEEL"/>
+      <solidref ref="gate_grid_2_solid"/>
+    </volume>
+    <volume name="anode_grid_2">
+      <materialref ref="G4_STAINLESS-STEEL"/>
+      <solidref ref="anode_grid_2_solid"/>
+    </volume>
+    <volume name="pmt_array_top_253_2">
+      <materialref ref="G4_STAINLESS-STEEL"/>
+      <solidref ref="pmt_array_top_253_2_solid"/>
+    </volume>
+    <volume name="pmt_array_bottom_241_2">
+      <materialref ref="G4_STAINLESS-STEEL"/>
+      <solidref ref="pmt_array_bottom_241_2_solid"/>
+    </volume>
+    <volume name="TPC">
+      <materialref ref="LiquidXenon"/>
+      <solidref ref="tpc_s"/>
+      <physvol>
+        <volumeref ref="active_lxe"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="gas_pocket"/>
+        <position name="gas_pocket_pos" unit="mm" x="0" y="0" z="735"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="field_cage"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="cathode_grid"/>
+        <position name="cathode_grid_pos" unit="mm" x="0" y="0" z="-729.5"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="gate_grid"/>
+        <position name="gate_grid_pos" unit="mm" x="0" y="0" z="729.5"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="anode_grid"/>
+        <position name="anode_grid_pos" unit="mm" x="0" y="0" z="740.5"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="pmt_array_top_253"/>
+        <position name="pmt_array_top_253_pos" unit="mm" x="0" y="0" z="807"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="pmt_array_bottom_241"/>
+        <position name="pmt_array_bottom_241_pos" unit="mm" x="0" y="0" z="-796"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="active_volume"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="gas_pocket_2"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="field_cage_2"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="cathode_grid_2"/>
+        <position name="cathode_grid_2_pos" unit="mm" x="0" y="0" z="-877"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="gate_grid_2"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="anode_grid_2"/>
+        <position name="anode_grid_2_pos" unit="mm" x="0" y="0" z="877"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="pmt_array_top_253_2"/>
+        <position name="pmt_array_top_253_2_pos" unit="mm" x="0" y="0" z="877"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="pmt_array_bottom_241_2"/>
+        <position name="pmt_array_bottom_241_2_pos" unit="mm" x="0" y="0" z="-877"/>
+      </physvol>
+    </volume>
+    <volume name="skin_side_panel">
+      <materialref ref="LiquidXenon"/>
+      <solidref ref="skin_side_panel_solid"/>
+      <auxiliary auxtype="SensDet" auxvalue="skin_side_panel"/>
+    </volume>
+    <volume name="skin_top_panel">
+      <materialref ref="LiquidXenon"/>
+      <solidref ref="skin_top_panel_solid"/>
+    </volume>
+    <volume name="skin_bottom_panel">
+      <materialref ref="LiquidXenon"/>
+      <solidref ref="skin_bottom_panel_solid"/>
+    </volume>
+    <volume name="xenon_skin">
+      <materialref ref="LiquidXenon"/>
+      <solidref ref="skin_s"/>
+      <physvol>
+        <volumeref ref="skin_side_panel"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="skin_top_panel"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="skin_bottom_panel"/>
+      </physvol>
+      <auxiliary auxtype="SensDet" auxvalue="LXe_Skin"/>
+    </volume>
+    <volume name="cryostat_shell">
+      <materialref ref="G4_TITANIUM"/>
+      <solidref ref="cryostat_shell_solid"/>
+    </volume>
+    <volume name="outer_shell">
+      <materialref ref="G4_TITANIUM"/>
+      <solidref ref="outer_shell_solid"/>
+    </volume>
+    <volume name="top_dome">
+      <materialref ref="G4_TITANIUM"/>
+      <solidref ref="top_dome_solid"/>
+    </volume>
+    <volume name="bottom_dome">
+      <materialref ref="G4_TITANIUM"/>
+      <solidref ref="bottom_dome_solid"/>
+    </volume>
+    <volume name="inner_cryostat">
+      <materialref ref="G4_TITANIUM"/>
+      <solidref ref="icv_s"/>
+      <physvol>
+        <volumeref ref="cryostat_shell"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="outer_shell"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="top_dome"/>
+        <position name="top_dome_pos" unit="mm" x="0" y="0" z="961"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="bottom_dome"/>
+        <position name="bottom_dome_pos" unit="mm" x="0" y="0" z="-961"/>
+      </physvol>
+    </volume>
+    <volume name="cryostat_outer_shell">
+      <materialref ref="G4_TITANIUM"/>
+      <solidref ref="cryostat_outer_shell_solid"/>
+    </volume>
+    <volume name="cryostat_inner_tube">
+      <materialref ref="G4_TITANIUM"/>
+      <solidref ref="cryostat_inner_tube_solid"/>
+    </volume>
+    <volume name="top_dome_2">
+      <materialref ref="G4_TITANIUM"/>
+      <solidref ref="top_dome_2_solid"/>
+    </volume>
+    <volume name="bottom_dome_2">
+      <materialref ref="G4_TITANIUM"/>
+      <solidref ref="bottom_dome_2_solid"/>
+    </volume>
+    <volume name="cryostat_vacuum">
+      <materialref ref="G4_TITANIUM"/>
+      <solidref ref="vacuum_s"/>
+      <physvol>
+        <volumeref ref="cryostat_outer_shell"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="cryostat_inner_tube"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="top_dome_2"/>
+        <position name="top_dome_2_pos" unit="mm" x="0" y="0" z="961"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="bottom_dome_2"/>
+        <position name="bottom_dome_2_pos" unit="mm" x="0" y="0" z="-961"/>
+      </physvol>
+    </volume>
+    <volume name="cryostat_shell_2">
+      <materialref ref="G4_TITANIUM"/>
+      <solidref ref="cryostat_shell_2_solid"/>
+    </volume>
+    <volume name="top_dome_3">
+      <materialref ref="G4_TITANIUM"/>
+      <solidref ref="top_dome_3_solid"/>
+    </volume>
+    <volume name="bottom_dome_3">
+      <materialref ref="G4_TITANIUM"/>
+      <solidref ref="bottom_dome_3_solid"/>
+    </volume>
+    <volume name="outer_cryostat">
+      <materialref ref="G4_TITANIUM"/>
+      <solidref ref="ocv_s"/>
+      <physvol>
+        <volumeref ref="cryostat_shell_2"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="top_dome_3"/>
+        <position name="top_dome_3_pos" unit="mm" x="0" y="0" z="1074"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="bottom_dome_3"/>
+        <position name="bottom_dome_3_pos" unit="mm" x="0" y="0" z="-1074"/>
+      </physvol>
+    </volume>
+    <volume name="ld_pmt_array">
+      <materialref ref="G4_STAINLESS-STEEL"/>
+      <solidref ref="ld_pmt_array_solid"/>
+    </volume>
+    <volume name="ld_inner_vessel">
+      <materialref ref="GdLS"/>
+      <solidref ref="ld_inner_vessel_solid"/>
+    </volume>
+    <volume name="ld_inner_vessel_skin">
+      <materialref ref="LiquidXenon"/>
+      <solidref ref="ld_inner_vessel_skin_solid"/>
+    </volume>
+    <volume name="ld_inner_vessel_outer_shell">
+      <materialref ref="G4_STAINLESS-STEEL"/>
+      <solidref ref="ld_inner_vessel_outer_shell_solid"/>
+    </volume>
+    <volume name="ld_inner_vessel_inner_core">
+      <materialref ref="G4_TITANIUM"/>
+      <solidref ref="ld_inner_vessel_inner_core_solid"/>
+    </volume>
+    <volume name="ld_xenon_gas_region">
+      <materialref ref="GaseousXenon"/>
+      <solidref ref="ld_xenon_gas_region_solid"/>
+      <auxiliary auxtype="SensDet" auxvalue="ld_xenon_gas_region"/>
+    </volume>
+    <volume name="ld_support_structures">
+      <materialref ref="G4_STAINLESS-STEEL"/>
+      <solidref ref="ld_support_structures_solid"/>
+    </volume>
+    <volume name="outer_detector">
+      <materialref ref="GdLS"/>
+      <solidref ref="od_s"/>
+      <physvol>
+        <volumeref ref="ld_pmt_array"/>
+        <position name="ld_pmt_array_pos" unit="mm" x="0" y="0" z="-994.58"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="ld_inner_vessel"/>
+        <position name="ld_inner_vessel_pos" unit="mm" x="0" y="0" z="-629.14"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="ld_inner_vessel_skin"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="ld_inner_vessel_outer_shell"/>
+        <position name="ld_inner_vessel_outer_shell_pos" unit="mm" x="0" y="0" z="28.81"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="ld_inner_vessel_inner_core"/>
+        <position name="ld_inner_vessel_inner_core_pos" unit="mm" x="0" y="0" z="686.75"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="ld_xenon_gas_region"/>
+        <position name="ld_xenon_gas_region_pos" unit="mm" x="0" y="0" z="-483.3"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="ld_support_structures"/>
+        <position name="ld_support_structures_pos" unit="mm" x="0" y="0" z="1023.38"/>
+      </physvol>
+      <auxiliary auxtype="SensDet" auxvalue="OuterDetector"/>
+    </volume>
+    <volume name="water_volume">
+      <materialref ref="G4_WATER"/>
+      <solidref ref="water_volume_solid"/>
+      <auxiliary auxtype="SensDet" auxvalue="water_volume"/>
+    </volume>
+    <volume name="tank_shell">
+      <materialref ref="G4_STAINLESS-STEEL"/>
+      <solidref ref="tank_shell_solid"/>
+    </volume>
+    <volume name="water_shield">
+      <materialref ref="G4_WATER"/>
+      <solidref ref="water_s"/>
+      <physvol>
+        <volumeref ref="water_volume"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="tank_shell"/>
+      </physvol>
+    </volume>
+    <volume name="active_xenon_volume">
+      <materialref ref="LiquidXenon"/>
+      <solidref ref="active_xenon_volume_solid"/>
+      <auxiliary auxtype="SensDet" auxvalue="active_xenon_volume"/>
+    </volume>
+    <volume name="xenon_active_solid">
+      <materialref ref="LiquidXenon"/>
+      <solidref ref="xenon_active_solid_solid"/>
+      <auxiliary auxtype="SensDet" auxvalue="xenon_active_solid"/>
+    </volume>
+    <volume name="xenon_mminos_solid">
+      <materialref ref="G4_STAINLESS-STEEL"/>
+      <solidref ref="xenon_mminos_solid_solid"/>
+    </volume>
+    <volume name="detector_cryostat_inner">
+      <materialref ref="G4_STAINLESS-STEEL"/>
+      <solidref ref="detector_cryostat_inner_solid"/>
+    </volume>
+    <volume name="detector_cryo_vacuum">
+      <materialref ref="G4_Galactic"/>
+      <solidref ref="detector_cryo_vacuum_solid"/>
+    </volume>
+    <volume name="cryostat_vacuum_solid">
+      <materialref ref="G4_TITANIUM"/>
+      <solidref ref="cryostat_vacuum_solid_solid"/>
+    </volume>
+    <volume name="cryostat_skin_solid">
+      <materialref ref="LiquidXenon"/>
+      <solidref ref="cryostat_skin_solid_solid"/>
+    </volume>
+    <volume name="outer_detector_shell">
+      <materialref ref="GdLS"/>
+      <solidref ref="outer_detector_shell_solid"/>
+    </volume>
+    <volume name="outer_detector_solid">
+      <materialref ref="GdLS"/>
+      <solidref ref="outer_detector_solid_solid"/>
+    </volume>
+    <volume name="outer_detector_interior_solid">
+      <materialref ref="GdLS"/>
+      <solidref ref="outer_detector_interior_solid_solid"/>
+    </volume>
+    <volume name="water_shield_volume">
+      <materialref ref="G4_WATER"/>
+      <solidref ref="water_shield_volume_solid"/>
+    </volume>
+    <volume name="World">
+      <materialref ref="G4_Galactic"/>
+      <solidref ref="world_s"/>
+      <physvol>
+        <volumeref ref="TPC"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="xenon_skin"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="inner_cryostat"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="cryostat_vacuum"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="outer_cryostat"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="outer_detector"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="water_shield"/>
+        <position name="water_shield_pos" unit="mm" x="0" y="0" z="-2941.54"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="active_xenon_volume"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="xenon_active_solid"/>
+        <position name="xenon_active_solid_pos" unit="mm" x="0" y="0" z="-3063.07"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="xenon_mminos_solid"/>
+        <position name="xenon_mminos_solid_pos" unit="mm" x="0" y="0" z="-43.07"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="detector_cryostat_inner"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="detector_cryo_vacuum"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="cryostat_vacuum_solid"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="cryostat_skin_solid"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="outer_detector_shell"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="outer_detector_solid"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="outer_detector_interior_solid"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="water_shield_volume"/>
+      </physvol>
+    </volume>
+  </structure>
+  <setup name="Default" version="1.0">
+    <world ref="World"/>
+  </setup>
+</gdml>
