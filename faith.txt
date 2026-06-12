@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="gdml.xsd">
+  <define/>
+  <materials>
+    <element name="Xenon" Z="54">
+      <atom unit="g/mole" value="131.293"/>
+    </element>
+    <element name="Carbon" Z="6">
+      <atom unit="g/mole" value="12.011"/>
+    </element>
+    <element name="Fluorine" Z="9">
+      <atom unit="g/mole" value="18.998"/>
+    </element>
+    <element name="Hydrogen" Z="1">
+      <atom unit="g/mole" value="1.008"/>
+    </element>
+    <element name="Gadolinium" Z="64">
+      <atom unit="g/mole" value="157.25"/>
+    </element>
+    <material name="LiquidXenon" state="liquid">
+      <D value="2.888" unit="g/cm3"/>
+      <T value="178" unit="K"/>
+      <fraction n="1" ref="Xenon"/>
+    </material>
+    <material name="GaseousXenon" state="gas">
+      <D value="0.0177" unit="g/cm3"/>
+      <T value="178" unit="K"/>
+      <fraction n="1" ref="Xenon"/>
+    </material>
+    <material name="PTFE" formula="C2F4" state="solid">
+      <D value="2.2" unit="g/cm3"/>
+      <composite n="2" ref="Carbon"/>
+      <composite n="4" ref="Fluorine"/>
+    </material>
+    <material name="GdLS" state="liquid">
+      <D value="0.86" unit="g/cm3"/>
+      <fraction n="0.8755" ref="Carbon"/>
+      <fraction n="0.1235" ref="Hydrogen"/>
+      <fraction n="0.001" ref="Gadolinium"/>
+    </material>
+  </materials>
+  <solids>
+    <tube name="active_lxe_s" lunit="mm" aunit="deg" rmin="0" rmax="728" z="1456" startphi="0" deltaphi="360"/>
+    <tube name="gas_pocket_s" lunit="mm" aunit="deg" rmin="0" rmax="728" z="8" startphi="0" deltaphi="360"/>
+    <tube name="field_cage_s" lunit="mm" aunit="deg" rmin="728" rmax="758" z="1456" startphi="0" deltaphi="360"/>
+    <tube name="cathode_grid_s" lunit="mm" aunit="deg" rmin="0" rmax="728" z="3" startphi="0" deltaphi="360"/>
+    <tube name="gate_grid_s" lunit="mm" aunit="deg" rmin="0" rmax="728" z="3" startphi="0" deltaphi="360"/>
+    <tube name="anode_grid_s" lunit="mm" aunit="deg" rmin="0" rmax="728" z="3" startphi="0" deltaphi="360"/>
+    <tube name="pmt_array_top_s" lunit="mm" aunit="deg" rmin="0" rmax="728" z="120" startphi="0" deltaphi="360"/>
+    <tube name="pmt_array_bottom_s" lunit="mm" aunit="deg" rmin="0" rmax="728" z="120" startphi="0" deltaphi="360"/>
+    <tube name="tpc_s" lunit="mm" aunit="deg" rmin="0" rmax="759" z="1754" startphi="0" deltaphi="360"/>
+    <tube name="skin_s" lunit="mm" aunit="deg" rmin="758" rmax="838" z="1754" startphi="0" deltaphi="360"/>
+    <tube name="icv_s" lunit="mm" aunit="deg" rmin="838" rmax="848" z="1922" startphi="0" deltaphi="360"/>
+    <tube name="vacuum_s" lunit="mm" aunit="deg" rmin="848" rmax="948" z="1922" startphi="0" deltaphi="360"/>
+    <tube name="ocv_s" lunit="mm" aunit="deg" rmin="948" rmax="961" z="2148" startphi="0" deltaphi="360"/>
+    <tube name="od_s" lunit="mm" aunit="deg" rmin="961" rmax="1161" z="2148" startphi="0" deltaphi="360"/>
+    <tube name="water_s" lunit="mm" aunit="deg" rmin="1161" rmax="3961" z="3148" startphi="0" deltaphi="360"/>
+    <box name="world_s" lunit="mm" x="9506.4" y="9506.4" z="9506.4"/>
+  </solids>
+  <structure>
+    <volume name="active_lxe">
+      <materialref ref="LiquidXenon"/>
+      <solidref ref="active_lxe_s"/>
+      <auxiliary auxtype="SensDet" auxvalue="LXe_TPC_Active"/>
+    </volume>
+    <volume name="gas_pocket">
+      <materialref ref="GaseousXenon"/>
+      <solidref ref="gas_pocket_s"/>
+      <auxiliary auxtype="SensDet" auxvalue="GXe_S2"/>
+    </volume>
+    <volume name="field_cage">
+      <materialref ref="PTFE"/>
+      <solidref ref="field_cage_s"/>
+    </volume>
+    <volume name="cathode_grid">
+      <materialref ref="G4_STAINLESS-STEEL"/>
+      <solidref ref="cathode_grid_s"/>
+    </volume>
+    <volume name="gate_grid">
+      <materialref ref="G4_STAINLESS-STEEL"/>
+      <solidref ref="gate_grid_s"/>
+    </volume>
+    <volume name="anode_grid">
+      <materialref ref="G4_STAINLESS-STEEL"/>
+      <solidref ref="anode_grid_s"/>
+    </volume>
+    <volume name="pmt_array_top_253">
+      <materialref ref="G4_STAINLESS-STEEL"/>
+      <solidref ref="pmt_array_top_s"/>
+      <auxiliary auxtype="SensDet" auxvalue="PMT_Top"/>
+    </volume>
+    <volume name="pmt_array_bottom_241">
+      <materialref ref="G4_STAINLESS-STEEL"/>
+      <solidref ref="pmt_array_bottom_s"/>
+      <auxiliary auxtype="SensDet" auxvalue="PMT_Bottom"/>
+    </volume>
+    <volume name="TPC">
+      <materialref ref="LiquidXenon"/>
+      <solidref ref="tpc_s"/>
+      <physvol>
+        <volumeref ref="active_lxe"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="gas_pocket"/>
+        <position name="gas_pocket_pos" unit="mm" x="0" y="0" z="735"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="field_cage"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="cathode_grid"/>
+        <position name="cathode_grid_pos" unit="mm" x="0" y="0" z="-729.5"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="gate_grid"/>
+        <position name="gate_grid_pos" unit="mm" x="0" y="0" z="729.5"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="anode_grid"/>
+        <position name="anode_grid_pos" unit="mm" x="0" y="0" z="740.5"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="pmt_array_top_253"/>
+        <position name="pmt_array_top_253_pos" unit="mm" x="0" y="0" z="807"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="pmt_array_bottom_241"/>
+        <position name="pmt_array_bottom_241_pos" unit="mm" x="0" y="0" z="-796"/>
+      </physvol>
+    </volume>
+    <volume name="xenon_skin">
+      <materialref ref="LiquidXenon"/>
+      <solidref ref="skin_s"/>
+      <auxiliary auxtype="SensDet" auxvalue="LXe_Skin"/>
+    </volume>
+    <volume name="inner_cryostat">
+      <materialref ref="G4_TITANIUM"/>
+      <solidref ref="icv_s"/>
+    </volume>
+    <volume name="cryostat_vacuum">
+      <materialref ref="G4_TITANIUM"/>
+      <solidref ref="vacuum_s"/>
+    </volume>
+    <volume name="outer_cryostat">
+      <materialref ref="G4_TITANIUM"/>
+      <solidref ref="ocv_s"/>
+    </volume>
+    <volume name="outer_detector">
+      <materialref ref="GdLS"/>
+      <solidref ref="od_s"/>
+      <auxiliary auxtype="SensDet" auxvalue="OuterDetector"/>
+    </volume>
+    <volume name="water_shield">
+      <materialref ref="G4_WATER"/>
+      <solidref ref="water_s"/>
+    </volume>
+    <volume name="World">
+      <materialref ref="G4_Galactic"/>
+      <solidref ref="world_s"/>
+      <physvol>
+        <volumeref ref="TPC"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="xenon_skin"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="inner_cryostat"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="cryostat_vacuum"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="outer_cryostat"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="outer_detector"/>
+      </physvol>
+      <physvol>
+        <volumeref ref="water_shield"/>
+      </physvol>
+    </volume>
+  </structure>
+  <setup name="Default" version="1.0">
+    <world ref="World"/>
+  </setup>
+</gdml>
